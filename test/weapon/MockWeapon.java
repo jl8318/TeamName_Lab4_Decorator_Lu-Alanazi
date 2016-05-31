@@ -6,4 +6,10 @@ public class MockWeapon extends GenericWeapon {
 		super(damage,range,rateOfFire,ammo);
 	}
 
+	@Override
+	public int getDamage(int distance) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
 }
