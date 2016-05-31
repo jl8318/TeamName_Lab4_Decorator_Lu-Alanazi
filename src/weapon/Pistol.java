@@ -14,7 +14,7 @@ public class Pistol extends GenericWeapon {
 	}
 
 	public Pistol(int damage, int range, int rateOfFire, int ammo) {
-		super(damage, range, rateOfFire, ammo);
+		super(damage, range, rateOfFire, ammo); 
 		
 	}
 	
