@@ -8,8 +8,7 @@ public class MockWeapon extends GenericWeapon {
 
 	@Override
 	public int getDamage(int distance) {
-		// TODO Auto-generated method stub
-		return 0;
+		return distance;
 	}
 
 }

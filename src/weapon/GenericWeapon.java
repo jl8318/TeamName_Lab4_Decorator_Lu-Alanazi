@@ -14,7 +14,9 @@ public abstract class GenericWeapon implements Weapon{
 		this.baseDamage = damage;
 		this.maxRange = range;
 		this.rateOfFire = rateOfFire;
+		this.actualRateFire = rateOfFire;
 		this.maxAmmon = ammo;
+		this.actualAmmo = ammo;
 	}
 	
 	@Override
