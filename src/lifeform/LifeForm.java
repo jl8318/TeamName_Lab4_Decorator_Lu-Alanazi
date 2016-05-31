@@ -1,6 +1,7 @@
 package lifeform;
 
 import gameplay.TimeObserver;
+import weapon.Weapon;
 
 /**
  * Keeps track of the information associated with a simple life form. Also
@@ -15,6 +16,7 @@ public abstract class LifeForm implements TimeObserver
 	private int currentLifePoints;
 	private int attackStrength;
 	private int mytime;
+	private Weapon weapon; 
 
 	/**
 	 * Create an LifeForm with the name, currentLifePoint and default 0
@@ -30,7 +32,7 @@ public abstract class LifeForm implements TimeObserver
 		if (point > 0) 
 		{
 			this.myName = name;
-			this.currentLifePoints = point;
+			this.currentLifePoints = point; 
 			mytime = 0;
 		} 
 		else 
@@ -150,4 +152,30 @@ public abstract class LifeForm implements TimeObserver
 	{
 		this.mytime = time;
 	}
+	
+	/**
+	 * Start La4
+	 * @author Alanazi
+	 * To set weapon 
+	 * @param weapon
+	 */
+	
+	public void setWeapon(Weapon weapon)
+	{
+		this.weapon = weapon ; 
+	}
+	
+	/**
+	 * 
+	 * @return Weapon 
+	 */
+	public Weapon getWepon()
+	{
+		return weapon ; 
+	}
+	
+	
+	
+	
+	
 }

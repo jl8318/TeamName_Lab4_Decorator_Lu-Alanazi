@@ -16,7 +16,7 @@ public abstract class GenericWeapon implements Weapon{
 		this.rateOfFire = rateOfFire;
 		this.actualRateFire = rateOfFire;
 		this.maxAmmon = ammo;
-		this.actualAmmo = ammo;
+		this.actualAmmo = ammo; 
 	}
 	
 	@Override
