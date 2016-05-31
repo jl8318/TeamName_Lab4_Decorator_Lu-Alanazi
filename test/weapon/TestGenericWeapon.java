@@ -32,12 +32,17 @@ public class TestGenericWeapon {
 		assertEquals(5,wp.getMaxAmmo());
 		wp.setActualAmmo(3);
 		assertEquals(3,wp.getActualAmmo());
-		
-		assertEquals(10,wp.getBaseDamage());
-		assertEquals(2,wp.getRateOfFire());
-		assertEquals(2,wp.getActualRateFire());
-		assertEquals(25,wp.getMaxRange());
-		
+		wp.setBaseDamage(20);
+		assertEquals(20,wp.getBaseDamage());
+		wp.setRateOfFire(3);
+		assertEquals(3,wp.getRateOfFire());
+		wp.setActualRateFire(1);
+		assertEquals(1,wp.getActualRateFire());
+		wp.setMaxRange(50);
+		assertEquals(50,wp.getMaxRange());
+		//test reloadWeapon
+		wp.reloadWeapon();
+		assertEquals(5,wp.getActualAmmo());
 	}
 
 }
