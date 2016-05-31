@@ -9,6 +9,9 @@ import org.junit.runners.Suite.SuiteClasses;
 import recovery.TestRecoveryFractional;
 import recovery.TestRecoveryLinear;
 import recovery.TestRecoveryNone;
+import weapon.TestAttachment;
+import weapon.TestGenericWeapon;
+import weapon.TestPlasmaCannon;
 import environment.TestCell;
 import environment.TestEnvironment;
 import gameplay.TestSimpleTimer;
@@ -29,7 +32,11 @@ import gameplay.TestSimpleTimer;
 	TestRecoveryNone.class,
 	TestRecoveryLinear.class,
 	TestRecoveryFractional.class,
-	TestSimpleTimer.class})
+	TestSimpleTimer.class,
+	TestGenericWeapon.class,
+	TestAttachment.class,
+	TestPlasmaCannon.class
+	})
 public class AllGameTests
 {
 }
