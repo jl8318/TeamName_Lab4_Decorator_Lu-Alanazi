@@ -10,7 +10,7 @@ public class Pistol extends GenericWeapon {
 	
 	public Pistol()
 	{
-		this(10 , 25 , 2 , 10);
+		this(10 , 25 , 2 , 10); 
 	}
 
 	public Pistol(int damage, int range, int rateOfFire, int ammo) {

@@ -1,8 +1,8 @@
 package weapon;
 
-public class Scoop extends Attachment {
+public class Scope extends Attachment {
 
-	public Scoop(Weapon wp) {
+	public Scope(Weapon wp) {
 		super(wp);
 		
 	}
