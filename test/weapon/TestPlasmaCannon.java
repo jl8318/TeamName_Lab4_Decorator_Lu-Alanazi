@@ -4,8 +4,16 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
+/**
+ * Test the PlasamCannon
+ * @author Jixiang Lu
+ *
+ */
 public class TestPlasmaCannon {
 
+	/**
+	 * Test the constructor.
+	 */
 	@Test
 	public void testInitialization() {
 		//test the construct without any parameters
@@ -30,6 +38,9 @@ public class TestPlasmaCannon {
 		
 	}
 	
+	/**
+	 * Test the getDamage method.
+	 */
 	@Test
 	public void testGetDamage()
 	{

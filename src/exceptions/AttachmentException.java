@@ -1,5 +1,11 @@
 package exceptions;
 
+/**
+ * An exception: when an weapon wrap more than two attachments, the exception will
+ * be throws.
+ * @author Jixiang Lu
+ *
+ */
 public class AttachmentException extends Exception
 {
 	/**

@@ -1,7 +1,7 @@
 package environment;
 
 /**
- * A template class. It is used to provide the distance varibale to LifeForm.
+ * A template class. It is used to provide the distance variable to LifeForm.
  * 
  * @author Jixiang Lu
  *

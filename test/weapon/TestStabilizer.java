@@ -7,7 +7,7 @@ import org.junit.Test;
 import exceptions.AttachmentException;
 
 /**
- * 
+ * Test Stabilizer's combination
  * @author Jixiang Lu
  *
  */
