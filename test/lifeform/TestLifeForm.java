@@ -68,7 +68,12 @@ public class TestLifeForm
 		 entity.pickUpWeapon(wp);
 		 Range.distance = 9;
 		 entity.attack(entity2, 1);
-		 assertEquals(650,entity2.getCurrentLifePoints());
+		 assertEquals(550,entity2.getCurrentLifePoints());
+		 //actual rate fire = 0
+		 assertEquals(0,entity.getWeapon().getActualRateFire());
+		 entity.attack(entity2, 2);
+		 assertEquals(545,entity2.getCurrentLifePoints());
+		 
 		 
 		 Range.distance=4;
 		

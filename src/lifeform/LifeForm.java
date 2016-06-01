@@ -136,9 +136,29 @@ public abstract class LifeForm implements TimeObserver
 		{
 			if(Range.distance<=5)
 				attackedEntity.takeHit(this.attackStrength);
+			else if(Range.distance<=10)
+			{
+				if(this.weapon==null||this.weapon.getActualAmmo()==0||this.weapon.getActualRateFire()==0)
+				{
+					attackedEntity.takeHit(this.attackStrength);
+				}
+				else
+				{
+					int damage = this.weapon.getDamageByrate(Range.distance, fireRate);
+					attackedEntity.takeHit(damage);
+				}
+			}
 			else
 			{
-				
+				if(this.weapon==null||this.weapon.getActualAmmo()==0||this.weapon.getActualRateFire()==0)
+				{
+					attackedEntity.takeHit(0);
+				}
+				else
+				{
+					int damage = this.weapon.getDamageByrate(Range.distance, fireRate);
+					attackedEntity.takeHit(damage);
+				}
 			}
 		}
 			
