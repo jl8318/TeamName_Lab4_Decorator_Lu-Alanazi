@@ -74,5 +74,82 @@ public class TestScope {
 		
 		
 	}
+	@Test
+	public void testPistolScope() throws AttachmentException
+	{
+		Weapon wp = new Pistol();
+		wp = new Scope(wp);
+		wp = new Scope(wp);
+		
+		/**
+		 * when distance < max range 
+		 * the distance = 25
+		 * 2*(+25-25/25 =1 it should return 2 
+		 * and the actual ammo is 9 now 
+		 */
+		assertEquals(2 , wp.getDamage(25));
+		assertEquals(9, wp.getActualAmmo());
+		/**
+		 * when the distance > max range still fire 
+		 * @author Saad
+		 */
+		assertEquals(0 , wp.getDamage(30));
+		assertEquals(0 , wp.getDamage(-30));
+		/**
+		 * now call the reload method , so the expected ammo is 10 
+		 * 
+		 */
+		wp.reloadWeapon();
+		assertEquals(10, wp.getActualAmmo());
+		
+		
+	}
+	/**
+	 * Test the Scope + Stabilizer. There is two attachment. 
+	 */
+	
+	@Test
+	public void testPistolScopeStab() throws AttachmentException
+	{
+		Weapon wp = new Pistol();
+		wp = new Scope(wp);
+		wp = new Stabilizer(wp);
+		
+		assertEquals(10, wp.getDamage(15));
+		assertEquals(10,wp.getDamage(15));
+		assertEquals(8, wp.getActualAmmo());
+		/**
+		 * now call the reload method , so the expected ammo is 10 
+		 * 
+		 */
+		wp.reloadWeapon();
+		assertEquals(10, wp.getActualAmmo());
+		
+		
+	}
+	
+	/**
+	 * Test the power Booster + Scoop. There is two attachment. 
+	 */
+	
+	@Test
+	public void testPistolpower() throws AttachmentException
+	{
+		Weapon wp = new Pistol();
+		wp = new PowerBooster(wp);
+		wp = new Stabilizer(wp);
+		
+		assertEquals(13, wp.getDamage(15));
+		assertEquals(4,wp.getDamage(15));
+		assertEquals(8, wp.getActualAmmo());
+		/**
+		 * now call the reload method , so the expected ammo is 10 
+		 * 
+		 */
+		wp.reloadWeapon();
+		assertEquals(10, wp.getActualAmmo());
+		
+		
+	}
 
 }

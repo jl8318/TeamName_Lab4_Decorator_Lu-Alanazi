@@ -20,6 +20,7 @@ public class Pistol extends GenericWeapon {
 	
 	/**
 	 * Method to calculate the damage for pistol
+	 * @author Saad
 	 */
 
 	@Override

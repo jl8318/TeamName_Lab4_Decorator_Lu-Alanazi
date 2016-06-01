@@ -10,7 +10,7 @@ public class TestGenericWeapon {
 	@Test
 	public void testInitialization() 
 	{
-		Weapon wp = new MockWeapon(10,25,2,10);
+		Weapon wp = new MockWeapon(10,25,2,10); 
 		assertTrue(wp instanceof Weapon);
 		assertEquals(10,wp.getMaxAmmo());
 		assertEquals(10,wp.getActualAmmo());
