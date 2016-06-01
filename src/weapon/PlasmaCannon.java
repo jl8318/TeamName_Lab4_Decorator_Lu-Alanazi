@@ -21,7 +21,6 @@ public class PlasmaCannon extends GenericWeapon {
 			this.setActualAmmo(actualAmmoInt);
 			return 0;
 		}
-		
 		else
 		{
 			//get result

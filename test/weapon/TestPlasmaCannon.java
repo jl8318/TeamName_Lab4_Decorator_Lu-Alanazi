@@ -45,6 +45,7 @@ public class TestPlasmaCannon {
 		assertEquals(expect,pc.getDamage(10));
 		//The actualAmmo == 0;
 		assertEquals(0,pc.getDamage(10));
+		assertEquals(0,pc.getDamage(30));
 		//reload
 		pc.reloadWeapon();
 		expect = 50*(4/4);

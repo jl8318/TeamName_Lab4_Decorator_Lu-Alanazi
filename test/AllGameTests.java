@@ -10,8 +10,11 @@ import recovery.TestRecoveryFractional;
 import recovery.TestRecoveryLinear;
 import recovery.TestRecoveryNone;
 import weapon.TestAttachment;
+import weapon.TestChainGun;
 import weapon.TestGenericWeapon;
+import weapon.TestPistol;
 import weapon.TestPlasmaCannon;
+import weapon.TestStabilizer;
 import environment.TestCell;
 import environment.TestEnvironment;
 import gameplay.TestSimpleTimer;
@@ -35,7 +38,10 @@ import gameplay.TestSimpleTimer;
 	TestSimpleTimer.class,
 	TestGenericWeapon.class,
 	TestAttachment.class,
-	TestPlasmaCannon.class
+	TestPlasmaCannon.class,
+	TestPistol.class,
+	TestChainGun.class,
+	TestStabilizer.class,	
 	})
 public class AllGameTests
 {
