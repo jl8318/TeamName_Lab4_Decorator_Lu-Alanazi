@@ -78,6 +78,20 @@ public class TestAttachment
 	}
 	
 	/**
+	 * Test update method.
+	 * @throws AttachmentException
+	 */
+	@Test
+	public void testUpdate() throws AttachmentException
+	{
+		Weapon wp = new PlasmaCannon();
+		wp = new MockAttachment(wp);
+		wp.getDamageByrate(2, 3);
+		assertEquals(0,wp.getActualRateFire());
+		wp.updateTime(0);
+		assertEquals(wp.getRateOfFire(),wp.getActualRateFire());
+	}
+	/**
 	 * 
 	 * @throws AttachmentException
 	 */
