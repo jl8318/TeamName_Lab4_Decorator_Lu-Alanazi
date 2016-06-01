@@ -48,7 +48,7 @@ public class TestStabilizer
 		assertEquals(r, wp.getDamage(20));
 		result = 50 * 1 / 4 * 1.25f;
 		r = (int) result;
-		assertEquals(r, wp.getDamage(15));
+		assertEquals(r, wp.getDamage(15)); 
 
 		// no ammon, automatically reload
 		result = 50 * 4 / 4 * 1.25f;

@@ -35,19 +35,26 @@ public class TestPowerBooster {
 	{
 		Weapon wp = new ChainGun();
 		wp = new PowerBooster(wp);
+		
+		/**
+		 * when the distance < Max Range
+		 * it it will call the getDamage function for chain Gun and the result is 15 
+		 * so will calculate the chain gun and the result will be 30 
+		 */
+		
+		assertEquals(30, wp.getDamage(30));
+		assertEquals(39 , wp.getActualAmmo());
 		/**
 		 * when the distance > max range still fire 
 		 * 
 		 */
-		assertEquals(0 , wp.getDamage(30));
+		assertEquals(0 , wp.getDamage(40)); 
 		/**
-		 * when the distance < Max Range
-		 * it it will call the getDanage function for chain Gun and the result is 50 
-		 * so will calculate the chain gun and the result will be 87 
+		 * Test Reload Method
 		 */
-		assertEquals(87 , wp.getDamage(20));
+		wp.reloadWeapon();
+		assertEquals(40, wp.getActualAmmo());
 	}
-        
 	
 	/**
 	 * Test the power Booster + Scoop. There is two attachment. 
@@ -58,13 +65,18 @@ public class TestPowerBooster {
 		Weapon wp = new ChainGun();
 		wp = new Scope(wp);
 		wp = new PowerBooster(wp);
-	    assertEquals(100, wp.getDamage(20));
+		/**
+		 * It call the get Damage Method for chain gun and calculate Scope and booster
+		 */
+		
+	    assertEquals(30, wp.getDamage(30));
 		/**
 		 * when the distance > max range 
 		 */
-		assertEquals(0 , wp.getDamage(30));
+		assertEquals(0 , wp.getDamage(40));
+				
 	}
-	
+    
 	/**
 	 * Test the power Booster + Stabilizer. There is two attachment. 
 	 */
@@ -75,10 +87,13 @@ public class TestPowerBooster {
 		wp = new Stabilizer(wp);
 		wp = new PowerBooster(wp);
 		
-		assertEquals(124 , wp.getDamage(20));
-		assertEquals(54 , wp.getDamage(10));
+		
+		assertEquals(36 , wp.getDamage(30));
+	    assertEquals(11 , wp.getDamage(10));
+		
 		
 	}
+	
 	/**
 	 * Test the power Booster + PowerBooster. There is two attachment. 
 	 */
@@ -90,11 +105,12 @@ public class TestPowerBooster {
 		wp = new PowerBooster(wp); 
 		
 		
-		assertEquals(200 , wp.getDamage(20));
-		assertEquals(75 , wp.getDamage(10)); 
+		assertEquals(60 , wp.getDamage(30)); 
+		assertEquals(57 , wp.getDamage(30)); 
 		
 		
 	}
+
 	
 
 

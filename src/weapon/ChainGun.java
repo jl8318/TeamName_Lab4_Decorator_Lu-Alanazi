@@ -9,7 +9,7 @@ package weapon;
 public class ChainGun extends GenericWeapon {
 	
 	 public ChainGun() {
-		this(50 , 20 , 1 , 4);
+		this(15 , 30 , 4 , 40);
 	}
 
 	public ChainGun(int damage, int range, int rateOfFire, int ammo) {

@@ -115,7 +115,7 @@ public class TestScope {
 		wp = new Stabilizer(wp);
 		wp = new Scope(wp);
 		 assertEquals(9 , wp.getDamage(15));
-		
+		 assertEquals(9 , wp.getActualAmmo());
 		
 		/**
 		 * now call the reload method , so the expected ammo is 10 
@@ -140,6 +140,7 @@ public class TestScope {
 		
         
 		assertEquals(16, wp.getDamage(15));
+		assertEquals(9 , wp.getActualAmmo());
 		
 		/**
 		 * now call the reload method , so the expected ammo is 10 
