@@ -20,6 +20,7 @@ public class TestLifeForm
 {
 	/*
 	 * This section for Lab 4-Decorator Lab 
+	 * @author Jixiang Lu
 	 */
 	/**
 	 * Test the LifeForm can pick and drop a weapon.

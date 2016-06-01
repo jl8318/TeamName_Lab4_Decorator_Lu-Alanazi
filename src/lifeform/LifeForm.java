@@ -115,7 +115,7 @@ public abstract class LifeForm implements TimeObserver
 	 * Attack another LifeForm. If the LifeForm has a weapon, it will
 	 * fire once. Otherwise, the damage is dependent on the attack strength.
 	 * If the LifeForm is dead, it can't attack another LifeForm.
-	 * 
+	 * @author Jixiang Lu
 	 * @param attackedEntity the LifeForm will be attack.
 	 */
 	public void attack(LifeForm attackedEntity)
@@ -126,7 +126,8 @@ public abstract class LifeForm implements TimeObserver
 	
 	/**
 	 * Attack another LifeForm. If the LifeForm has a weapon, it will
-	 * fire <fireRate> times. Otherwise, the damage is dependent on the attack strength. 
+	 * fire <fireRate> times. Otherwise, the damage is dependent on the attack strength.
+	 * @author Jixiang Lu 
 	 * @param attackedEntity the LifeForm will be attack
 	 * @param fireRate the number of fire times 
 	 */
@@ -193,21 +194,23 @@ public abstract class LifeForm implements TimeObserver
 	{
 		this.mytime = time;
 	}
-	
-	/**
-	 * Start La4
-	 * @author Alanazi
-	 * To set weapon 
-	 * @param weapon
+
+	/*
+	 * Lab 4
+	 * @author Jixiang Lu 
 	 */
 	
+	/**
+	 * Sets the weapon.
+	 * @param weapon
+	 */
 	public void setWeapon(Weapon weapon)
 	{
 		this.weapon = weapon ; 
 	}
 	
 	/**
-	 * 
+	 * Gets the weapon.
 	 * @return Weapon 
 	 */
 	public Weapon getWeapon()
@@ -215,12 +218,19 @@ public abstract class LifeForm implements TimeObserver
 		return weapon ; 
 	}
 
+	/**
+	 * Drop the weapon
+	 */
 	public void dropWeapon()
 	{
 		this.weapon = null;
 		
 	}
-
+	
+	/**
+	 * Pick up the weapon. If the LifeForm has weapon, do nothing.
+	 * @param wp2 The weapon should been picked up.
+	 */
 	public void pickUpWeapon(Weapon wp2)
 	{
 		if(this.weapon == null)
@@ -229,7 +239,7 @@ public abstract class LifeForm implements TimeObserver
 	}
 	
 	/**
-	 * Reload the weapon
+	 * Reload the weapon. If the LifeForm has no weapon, do noting.
 	 */
 	public void reloadWeapon()
 	{
