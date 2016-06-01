@@ -28,7 +28,7 @@ public class TestLifeForm
 	 @Test
 	 public void testDropOrPickWeapon()
 	 {
-		 LifeForm life = new MockLifeForm("Bob",100);
+		 LifeForm life = new MockLifeForm("Bob",100); 
 		 //initialization with no weapon.
 		 assertNull(life.getWeapon());
 		 //when life w/o weapon, it can dropWeapon
