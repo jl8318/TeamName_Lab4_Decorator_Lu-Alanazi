@@ -1,5 +1,6 @@
 package lifeform;
 
+import environment.Range;
 import gameplay.TimeObserver;
 import weapon.Weapon;
 
@@ -111,22 +112,41 @@ public abstract class LifeForm implements TimeObserver
 	}
 
 	/**
-	 * Attack another LifeForm based on attack strength of the LifeForm.
+	 * Attack another LifeForm. If the LifeForm has a weapon, it will
+	 * fire once. Otherwise, the damage is dependent on the attack strength.
 	 * If the LifeForm is dead, it can't attack another LifeForm.
 	 * 
 	 * @param attackedEntity the LifeForm will be attack.
 	 */
 	public void attack(LifeForm attackedEntity)
 	{
+		this.attack(attackedEntity, 1);
+				
+	}
+	
+	/**
+	 * Attack another LifeForm. If the LifeForm has a weapon, it will
+	 * fire <fireRate> times. Otherwise, the damage is dependent on the attack strength. 
+	 * @param attackedEntity the LifeForm will be attack
+	 * @param fireRate the number of fire times 
+	 */
+	public void attack(LifeForm attackedEntity,int fireRate)
+	{
 		if(this.currentLifePoints>0)
-			attackedEntity.takeHit(this.attackStrength);
+		{
+			if(Range.distance<=5)
+				attackedEntity.takeHit(this.attackStrength);
+			else
+			{
+				
+			}
+		}
+			
 		else
 		{
 			//dead can't attack.
 		}
-				
 	}
-	
 	/**
 	 * Update the instance variable mytime.
 	 */

@@ -1,5 +1,6 @@
 package lifeform;
 
+
 /**
  * A Mock class that concrete LifeForm class which will
  * be tested.
