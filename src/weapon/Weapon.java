@@ -16,4 +16,6 @@ public interface Weapon {
 	public void setActualAmmo(int ammo);
 	public int getActualAmmo();
 	public void reloadWeapon();
+	public void setNumberOfAttachment(int attachment);
+	public int getNumberOfAttachment();
 }

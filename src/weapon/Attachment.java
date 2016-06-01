@@ -1,11 +1,25 @@
 package weapon;
 
+import exceptions.AttachmentException;
+
 public abstract class Attachment implements Weapon
 {
 	private Weapon wp;
-	public Attachment(Weapon wp)
+	
+	public Attachment(Weapon wp) throws AttachmentException
 	{
-		this.wp = wp;
+		int attachment = wp.getNumberOfAttachment();
+		if(attachment < 2)
+		{
+			this.wp = wp;
+			wp.setNumberOfAttachment(attachment+1);
+			
+		}
+		else
+		{
+			throw new AttachmentException("cannot be wrapped around a weapon that already has two attachments!");
+		}
+		
 	}
 	
 	public Weapon getWeapon()
@@ -82,4 +96,15 @@ public abstract class Attachment implements Weapon
 		wp.reloadWeapon();
 	}
 
+	@Override
+	public void setNumberOfAttachment(int attachment)
+	{
+		wp.setNumberOfAttachment(attachment);
+	}
+	
+	@Override
+	public int getNumberOfAttachment()
+	{
+		return wp.getNumberOfAttachment();
+	}
 }

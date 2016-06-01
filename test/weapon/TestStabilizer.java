@@ -4,11 +4,21 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
+import exceptions.AttachmentException;
+
+/**
+ * 
+ * @author Jixiang Lu
+ *
+ */
 public class TestStabilizer
 {
 
+	/**
+	 * Test the Stabilizer's constructor
+	 */
 	@Test
-	public void testInitialization()
+	public void testInitialization() throws AttachmentException
 	{
 		Weapon wp =  new PlasmaCannon();
 		wp = new Stabilizer(wp);
@@ -20,7 +30,7 @@ public class TestStabilizer
 	 * Test the getDamage() method.
 	 */
 	@Test
-	public void testGetDamage()
+	public void testGetDamage() throws AttachmentException
 	{
 		Weapon wp =  new PlasmaCannon();
 		wp = new Stabilizer(wp);
@@ -45,5 +55,15 @@ public class TestStabilizer
 		wp.reloadWeapon();
 		assertEquals(r,wp.getDamage(15));
 	}
+	
+	/**
+	 * Test the Scope + Stabilizer
+	 */
+	@Test
+	public void testStabilizer() throws AttachmentException
+	{
+		
+	}
 
 }
+

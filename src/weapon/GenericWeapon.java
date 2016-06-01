@@ -8,6 +8,7 @@ public abstract class GenericWeapon implements Weapon{
 	private int maxAmmon;
 	private int actualAmmo;
 	private int actualRateFire;
+	private int numberOfAttachment;
 	
 	public GenericWeapon(int damage,int range,int rateOfFire,int ammo)
 	{
@@ -17,6 +18,7 @@ public abstract class GenericWeapon implements Weapon{
 		this.actualRateFire = rateOfFire;
 		this.maxAmmon = ammo;
 		this.actualAmmo = ammo; 
+		this.numberOfAttachment = 0;
 	}
 	
 	@Override
@@ -83,6 +85,18 @@ public abstract class GenericWeapon implements Weapon{
 	public void reloadWeapon()
 	{
 		this.actualAmmo = this.maxAmmon;
+	}
+	
+	@Override
+	public void setNumberOfAttachment(int attachment)
+	{
+		this.numberOfAttachment = attachment;
+	}
+	
+	@Override
+	public int getNumberOfAttachment()
+	{
+		return this.numberOfAttachment;
 	}
 
 }

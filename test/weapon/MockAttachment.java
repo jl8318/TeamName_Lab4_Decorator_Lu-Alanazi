@@ -1,8 +1,10 @@
 package weapon;
 
+import exceptions.AttachmentException;
+
 public class MockAttachment extends Attachment{
 
-	public MockAttachment(Weapon wp) 
+	public MockAttachment(Weapon wp) throws AttachmentException
 	{
 		super(wp);
 		
@@ -11,7 +13,7 @@ public class MockAttachment extends Attachment{
 	@Override
 	public int getDamage(int distance) 
 	{
-		return distance;
+		return distance+ this.getWeapon().getDamage(distance) ;
 	}
 
 	

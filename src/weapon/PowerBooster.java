@@ -1,19 +1,24 @@
 package weapon;
+
+import exceptions.AttachmentException;
+
 /**
  * Power Booster Class 
  * @author Saad
  *
  */
 
-public class PowerBooster extends Attachment {
+public class PowerBooster extends Attachment 
+{
 
-	public PowerBooster(Weapon wp) {
+	public PowerBooster(Weapon wp) throws AttachmentException
+	{
 		super(wp);
-		// TODO Auto-generated constructor stub
 	}
 
 	@Override
-	public int getDamage(int distance) {
+	public int getDamage(int distance) 
+	{
 		int  distanceads = Math.abs(distance);
 		float weapon = this.getWeapon().getDamage(distanceads) ; 
 		float actualAmmo = (float)this.getActualAmmo();

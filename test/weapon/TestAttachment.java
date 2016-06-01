@@ -5,11 +5,14 @@ import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
+import exceptions.AttachmentException;
+import exceptions.MyNewException;
+
 public class TestAttachment
 {
 
 	@Test
-	public void testInitialization() 
+	public void testInitialization() throws AttachmentException
 	{
 		Weapon wp = new PlasmaCannon();
 		Attachment at = new MockAttachment(wp);
@@ -23,11 +26,11 @@ public class TestAttachment
 		assertEquals(1,at.getActualRateFire());
 		assertEquals(20,at.getMaxRange());
 		
-		assertEquals(2,at.getDamage(2));
+		assertEquals(2+50,at.getDamage(2));
 	}
 	
 	@Test
-	public void TestSetter()
+	public void testSetter() throws AttachmentException
 	{
 		Weapon wp = new PlasmaCannon();
 		Attachment at = new MockAttachment(wp);
@@ -52,4 +55,22 @@ public class TestAttachment
 		assertEquals(wp,at.getWeapon());
 	}
 
+	@Test(expected =AttachmentException.class)
+	public void testWrapWeapon() throws AttachmentException
+	{
+		//one attachment
+		Weapon wp = new PlasmaCannon();
+		wp = new MockAttachment(wp);
+		assertEquals(2+50,wp.getDamage(2));
+		
+		//two attachment
+		wp= new MockAttachment(wp);
+		wp.reloadWeapon();
+		assertEquals(4+50,wp.getDamage(2));
+		
+		//more than two attachment will throw AttachmentException
+		wp = new MockAttachment(wp);
+		
+		
+	}
 }
