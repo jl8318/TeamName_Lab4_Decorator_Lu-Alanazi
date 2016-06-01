@@ -7,9 +7,20 @@ import org.junit.Test;
 
 import exceptions.AttachmentException;
 
+/**
+ * Test the Attachment class.
+ * 
+ * @author Jixiang Lu
+ *
+ */
 public class TestAttachment
 {
-
+	
+	/**
+	 * Test the constructor and getter.
+	 * @throws AttachmentException if weapon wrap more than two attachment,
+	 * the exception will throws.
+	 */
 	@Test
 	public void testInitialization() throws AttachmentException
 	{
@@ -28,6 +39,12 @@ public class TestAttachment
 		assertEquals(2+50,at.getDamage(2));
 	}
 	
+	
+	/**
+	 * Test all the concrete setter in the attachment Class.
+	 * @throws AttachmentException if weapon wrap more than two attachment,
+	 * the exception will throws.
+	 */
 	@Test
 	public void testSetter() throws AttachmentException
 	{
@@ -56,7 +73,8 @@ public class TestAttachment
 
 	/**
 	 * Test  getDamageByrate method
-	 * @throws AttachmentException
+	 * @throws AttachmentException if weapon wrap more than two attachment,
+	 * the exception will throws.
 	 */
 	@Test
 	public void testGetDamageByrate() throws AttachmentException
@@ -79,7 +97,8 @@ public class TestAttachment
 	
 	/**
 	 * Test update method.
-	 * @throws AttachmentException
+	 * @throws AttachmentException if weapon wrap more than two attachment,
+	 * the exception will throws.
 	 */
 	@Test
 	public void testUpdate() throws AttachmentException
@@ -92,8 +111,9 @@ public class TestAttachment
 		assertEquals(wp.getRateOfFire(),wp.getActualRateFire());
 	}
 	/**
-	 * 
-	 * @throws AttachmentException
+	 * Test the weapon can not wrap more than two attachment.
+	 * @throws AttachmentException if weapon wrap more than two attachment,
+	 * the exception will throws.
 	 */
 	@Test(expected =AttachmentException.class)
 	public void testWrapWeapon() throws AttachmentException

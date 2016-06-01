@@ -6,8 +6,16 @@ import gameplay.SimpleTimer;
 
 import org.junit.Test;
 
+/**
+ * Test the GenericWeapon clasee
+ * @author Jixiang Lu
+ *
+ */
 public class TestGenericWeapon {
-
+	
+	/**
+	 * Test the constructor and getter.
+	 */
 	@Test
 	public void testInitialization() 
 	{
@@ -24,6 +32,9 @@ public class TestGenericWeapon {
 		
 	}
 	
+	/**
+	 * Test all the concrete setter in the GenericWeapon class. 
+	 */
 	@Test
 	public void testAllSetter()
 	{
