@@ -4,6 +4,8 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
+import exceptions.AttachmentException;
+
 public class TestScope {
 	/**
 	 * Test Initialization 
@@ -11,7 +13,8 @@ public class TestScope {
 	 */
 
 	@Test
-	public void testInitilization() {
+	public void testInitilization()throws AttachmentException
+	{
 		Weapon wp = new Pistol();
 		wp = new Scope(wp);
 		assertTrue(wp instanceof Attachment);
@@ -19,12 +22,12 @@ public class TestScope {
 		
 	}
 	/**
-	 * Test GetDamage() meethod
+	 * Test GetDamage() method
 	 * @author Saad
 	 */
 	
 	@Test
-	public void testGetDamage()
+	public void testGetDamage() throws AttachmentException
 	{
 		Weapon wp = new Pistol();
 		wp = new Scope(wp);
@@ -49,7 +52,7 @@ public class TestScope {
 	 */
 	
 	@Test
-	public void testReaload()
+	public void testReaload() throws AttachmentException
 	{
 		Weapon wp = new Pistol();
 		wp = new Scope(wp);

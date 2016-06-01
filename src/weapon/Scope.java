@@ -1,18 +1,14 @@
 package weapon;
 
-<<<<<<< Updated upstream:src/weapon/Scope.java
-public class Scope extends Attachment {
-
-	public Scope(Weapon wp) {
-=======
 import exceptions.AttachmentException;
 
-public class Scoop extends Attachment 
+
+public class Scope extends Attachment 
 {
 
-	public Scoop(Weapon wp) throws AttachmentException
+	public Scope(Weapon wp) throws AttachmentException 
 	{
->>>>>>> Stashed changes:src/weapon/Scoop.java
+
 		super(wp);
 		
 	}
