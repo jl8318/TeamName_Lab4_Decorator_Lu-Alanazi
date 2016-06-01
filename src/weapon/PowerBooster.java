@@ -20,8 +20,8 @@ public class PowerBooster extends Attachment
 	public int getDamage(int distance) 
 	{
 		int  distanceads = Math.abs(distance);
-		float weapon = this.getWeapon().getDamage(distanceads) ; 
 		float actualAmmo = (float)this.getActualAmmo();
+		float weapon = this.getWeapon().getDamage(distanceads) ; 	
 		float maxAmmo = (float)this.getMaxAmmo();
 		if (distanceads <= getMaxRange())
 		{
