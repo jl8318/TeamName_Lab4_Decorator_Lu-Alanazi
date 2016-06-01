@@ -8,6 +8,8 @@ public class MockWeapon extends GenericWeapon {
 
 	@Override
 	public int getDamage(int distance) {
+		int actualAmmoInt = ((getActualAmmo()-1)>0)?(getActualAmmo()-1):0;
+		this.setActualAmmo(actualAmmoInt);
 		return distance; 
 	}
 

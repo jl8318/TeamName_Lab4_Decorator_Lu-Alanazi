@@ -1,6 +1,7 @@
 package weapon;
 
-public class PlasmaCannon extends GenericWeapon {
+public class PlasmaCannon extends GenericWeapon 
+{
 	
 	public PlasmaCannon()
 	{
@@ -13,7 +14,8 @@ public class PlasmaCannon extends GenericWeapon {
 	}
 
 	@Override
-	public int getDamage(int distance) {
+	public int getDamage(int distance) 
+	{
 		int distanceAbs = Math.abs(distance);
 		if(distanceAbs>this.getMaxRange())
 		{
@@ -23,16 +25,21 @@ public class PlasmaCannon extends GenericWeapon {
 		}
 		else
 		{
-			//get result
-			float baseDamage = (float)this.getBaseDamage();
-			float actualAmmo = (float)this.getActualAmmo();
-			float maxAmmo = (float)this.getMaxAmmo();
-			float damage = baseDamage*(actualAmmo/maxAmmo);   
-			int result = (int)damage;
-			//change actualAmmo
-			int actualAmmoInt = ((getActualAmmo()-1)>0)?(getActualAmmo()-1):0;
-			this.setActualAmmo(actualAmmoInt);
-			return result;
+			if(this.getActualAmmo()>0)
+			{
+				//get result
+				float baseDamage = (float)this.getBaseDamage();
+				float actualAmmo = (float)this.getActualAmmo();
+				float maxAmmo = (float)this.getMaxAmmo();
+				float damage = baseDamage*(actualAmmo/maxAmmo);   
+				int result = (int)damage;
+				//change actualAmmo
+				int actualAmmoInt = ((getActualAmmo()-1)>0)?(getActualAmmo()-1):0;
+				this.setActualAmmo(actualAmmoInt);
+				return result;
+			}
+			else
+				return 0;
 		}
 	}
 

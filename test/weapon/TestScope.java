@@ -136,11 +136,12 @@ public class TestScope {
 	public void testPistolpower() throws AttachmentException
 	{
 		Weapon wp = new Pistol();
-		wp = new PowerBooster(wp);
+		wp = new PowerBooster(wp);	
 		wp = new Stabilizer(wp);
 		
-		assertEquals(13, wp.getDamage(15));
-		assertEquals(4,wp.getDamage(15));
+
+		assertEquals(15, wp.getDamage(15));
+		assertEquals(13,wp.getDamage(15));
 		assertEquals(8, wp.getActualAmmo());
 		/**
 		 * now call the reload method , so the expected ammo is 10 

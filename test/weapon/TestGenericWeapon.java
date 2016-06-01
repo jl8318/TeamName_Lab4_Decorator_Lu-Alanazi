@@ -2,6 +2,7 @@ package weapon;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
+import gameplay.SimpleTimer;
 
 import org.junit.Test;
 
@@ -44,5 +45,56 @@ public class TestGenericWeapon {
 		wp.reloadWeapon();
 		assertEquals(5,wp.getActualAmmo());
 	}
+	
+	/**
+	 * Test getDamageByrate method.
+	 */
+	@Test
+	public void testGetDamageByRate()
+	{
+		Weapon wp = new MockWeapon(10,25,2,10);
+		//fireRate > actual fireRate
+		int result = wp.getDamageByrate(2, 3);
+		assertEquals(4,result);
+		assertEquals(0,wp.getActualRateFire());
+		
+		//fireRate < actual fireRate
+		wp.setActualRateFire(5);
+		result = wp.getDamageByrate(2, 3);
+		assertEquals(6,result);
+		assertEquals(2,wp.getActualRateFire());
+	}
 
+	/**
+	 * A SimpleTimer for the test and have the weapon observe it.
+	 * Test that the rate of fire works good. 
+	 */
+	@Test
+	public void testRateOfFire()
+	{
+		SimpleTimer time = new SimpleTimer();
+		Weapon wp = new MockWeapon(10,25,2,5);
+		time.addTimeObserver(wp);
+		//fire maximum times
+		int damage = wp.getDamageByrate(3, 2);
+		assertEquals(6,damage);
+		assertEquals(3,wp.getActualAmmo());
+		//no ammo was waste
+		damage = wp.getDamageByrate(3, 2);
+		assertEquals(3,wp.getActualAmmo());
+		//can't fire
+		assertEquals(0,damage);
+		//Have one unit of time pass
+		time.timeChanged();
+		assertEquals(2, wp.getActualRateFire());
+		//fire again
+		damage = wp.getDamageByrate(3, 2);
+		assertEquals(6,damage);
+		//one ammo left
+		time.timeChanged();
+		damage = wp.getDamageByrate(3, 2);
+		assertEquals(6,damage);
+		assertEquals(0,wp.getActualAmmo());
+		
+	}
 }

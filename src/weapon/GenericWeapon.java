@@ -1,6 +1,7 @@
 package weapon;
 
-public abstract class GenericWeapon implements Weapon{
+public abstract class GenericWeapon implements Weapon
+{
 	
 	private int baseDamage;
 	private int maxRange;
@@ -99,4 +100,34 @@ public abstract class GenericWeapon implements Weapon{
 		return this.numberOfAttachment;
 	}
 
+	@Override
+	public int getDamageByrate(int distance, int fireRate)
+	{
+		int damage =0;
+		if(fireRate<= this.actualRateFire)
+		{
+			for(int i = 0;i<fireRate;i++)
+			{
+				damage+=this.getDamage(distance);
+			}
+			this.actualRateFire -=fireRate;
+
+		}
+		else
+		{
+			int temp = this.actualRateFire;
+			for(int i =0;i<temp;i++)
+			{
+				damage += this.getDamage(distance);
+			}
+			this.actualRateFire = 0;
+		}
+		return damage;
+	}
+	
+	@Override
+	public void updateTime(int time)
+	{
+		this.actualRateFire = this.rateOfFire;
+	}
 }

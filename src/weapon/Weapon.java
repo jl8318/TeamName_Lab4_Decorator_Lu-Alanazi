@@ -1,6 +1,9 @@
 package weapon;
 
-public interface Weapon {
+import gameplay.TimeObserver;
+
+public interface Weapon extends TimeObserver
+{
 	
 	public int getDamage(int distance);
 	public void setMaxAmmo(int ammo);
@@ -18,4 +21,5 @@ public interface Weapon {
 	public void reloadWeapon();
 	public void setNumberOfAttachment(int attachment);
 	public int getNumberOfAttachment();
+	public int getDamageByrate(int distance, int fireRate);
 }

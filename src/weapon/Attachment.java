@@ -107,4 +107,34 @@ public abstract class Attachment implements Weapon
 	{
 		return wp.getNumberOfAttachment();
 	}
+	@Override
+	public int getDamageByrate(int distance, int fireRate)
+	{
+		int damage =0;
+		int actualRateFire = this.getActualRateFire();
+		if(fireRate<= actualRateFire)
+		{
+			for(int i = 0;i<fireRate;i++)
+			{
+				damage+=this.getDamage(distance);
+			}
+			 this.setActualRateFire(actualRateFire-fireRate);
+
+		}
+		else
+		{
+			for(int i =0;i<actualRateFire;i++)
+			{
+				damage += this.getDamage(distance);
+			}
+			this.setActualRateFire(0);
+		}
+		return damage;
+	}
+	
+	@Override
+	public void updateTime(int time)
+	{
+		wp.updateTime(time);
+	}
 }

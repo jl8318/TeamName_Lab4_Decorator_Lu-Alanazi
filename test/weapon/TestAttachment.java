@@ -54,6 +54,33 @@ public class TestAttachment
 		assertEquals(wp,at.getWeapon());
 	}
 
+	/**
+	 * Test  getDamageByrate method
+	 * @throws AttachmentException
+	 */
+	@Test
+	public void testGetDamageByrate() throws AttachmentException
+	{
+		Weapon wp = new PlasmaCannon();
+		wp = new MockAttachment(wp);
+		
+		//fireRate > actual fireRate
+		int result = wp.getDamageByrate(2, 3);
+		assertEquals(52,result);
+		assertEquals(0,wp.getActualRateFire());
+		assertEquals(3,wp.getActualAmmo());
+		
+		//fireRate < actual fireRate
+		wp.setActualRateFire(5);
+		result = wp.getDamageByrate(2, 3);
+		assertEquals(80,result);
+		assertEquals(2,wp.getActualRateFire());
+	}
+	
+	/**
+	 * 
+	 * @throws AttachmentException
+	 */
 	@Test(expected =AttachmentException.class)
 	public void testWrapWeapon() throws AttachmentException
 	{
