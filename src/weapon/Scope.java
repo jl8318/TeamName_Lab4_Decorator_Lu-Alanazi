@@ -21,7 +21,7 @@ public class Scope extends Attachment
 		float maxrange = getMaxRange();
 		if (distanceads <= getMaxRange())
 		{
-			float damage = weapon*(1+(maxrange-distanceads)/maxrange);
+			float damage = weapon*(1+(maxrange-distanceads)/maxrange); 
 			return (int)damage;
 		}
 		else
