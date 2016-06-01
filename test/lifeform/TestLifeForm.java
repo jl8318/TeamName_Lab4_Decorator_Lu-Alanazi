@@ -2,6 +2,7 @@ package lifeform;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
+import environment.Range;
 import gameplay.SimpleTimer;
 
 import org.junit.Test;
@@ -48,10 +49,33 @@ public class TestLifeForm
 		 
 		 //pickup another weapon
 		 life.pickUpWeapon(wp2);
-		 assertEquals(wp2,life.getWeapon());
+		 assertEquals(wp2,life.getWeapon());	 
 		 
+	 }
+	 
+	 /**
+	  * Test new attack method with weapon.
+	  */
+	 @Test
+	 public void testAttackWeapon()
+	 {
+		 LifeForm entity = new MockLifeForm("Bob",500);
+		 LifeForm entity2 = new MockLifeForm("Jack",600);
+		 entity.setAttackStrength(5);
+		 Weapon wp = new PlasmaCannon();
+		 Weapon wp2 = new Pistol();
 		 
+		 entity.pickUpWeapon(wp);
+		 Range.distance = 9;
+		 entity.attack(entity2, 1);
+		 assertEquals(650,entity2.getCurrentLifePoints());
 		 
+		 Range.distance=4;
+		
+		 entity.attack(entity2);
+		 assertEquals(595,entity2.getCurrentLifePoints());
+		 
+		
 	 }
 	
 	
