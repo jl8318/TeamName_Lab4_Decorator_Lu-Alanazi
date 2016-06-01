@@ -6,7 +6,6 @@ import static org.junit.Assert.assertTrue;
 import org.junit.Test;
 
 import exceptions.AttachmentException;
-import exceptions.MyNewException;
 
 public class TestAttachment
 {

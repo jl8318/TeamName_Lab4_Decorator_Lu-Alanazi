@@ -34,6 +34,7 @@ public abstract class LifeForm implements TimeObserver
 			this.myName = name;
 			this.currentLifePoints = point; 
 			mytime = 0;
+			this.weapon = null;
 		} 
 		else 
 		{
@@ -169,10 +170,24 @@ public abstract class LifeForm implements TimeObserver
 	 * 
 	 * @return Weapon 
 	 */
-	public Weapon getWepon()
+	public Weapon getWeapon()
 	{
 		return weapon ; 
 	}
+
+	public void dropWeapon()
+	{
+		this.weapon = null;
+		
+	}
+
+	public void pickUpWeapon(Weapon wp2)
+	{
+		if(this.weapon == null)
+			this.setWeapon(wp2);
+		
+	}
+	
 	
 	
 	

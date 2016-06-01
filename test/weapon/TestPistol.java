@@ -1,14 +1,12 @@
 package weapon;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 /**
  * Test Class to test the functionality of Pistol 
  * @author Saad
  */
 
 import org.junit.Test;
-
-import gameplay.SimpleTimer;
 
 public class TestPistol 
 {

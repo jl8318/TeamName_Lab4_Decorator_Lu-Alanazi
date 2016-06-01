@@ -1,9 +1,14 @@
 package lifeform;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNull;
 import gameplay.SimpleTimer;
 
 import org.junit.Test;
+
+import weapon.Pistol;
+import weapon.PlasmaCannon;
+import weapon.Weapon;
 
 /**
  * Test the functionality provided by the LifeForm class.
@@ -12,6 +17,46 @@ import org.junit.Test;
  */
 public class TestLifeForm 
 {
+	/*
+	 * This section for Lab 4-Decorator Lab 
+	 */
+	/**
+	 * Test the LifeForm can pick and drop a weapon.
+	 */
+	 @Test
+	 public void testDropOrPickWeapon()
+	 {
+		 LifeForm life = new MockLifeForm("Bob",100);
+		 //initialization with no weapon.
+		 assertNull(life.getWeapon());
+		 //when life w/o weapon, it can dropWeapon
+		 life.dropWeapon();
+		 assertNull(life.getWeapon());
+		 		 
+		 //When life w/o weapon, it can pickup weapon.
+		 Weapon wp = new Pistol();
+		 life.pickUpWeapon(wp);
+		 assertEquals(wp,life.getWeapon());
+		 //when life w/ weapon, it can pick up another weapon.
+		 Weapon wp2 = new PlasmaCannon();
+		 life.pickUpWeapon(wp2);
+		 assertEquals(wp,life.getWeapon());
+		 
+		 //drop weapon
+		 life.dropWeapon();
+		 assertNull(life.getWeapon());
+		 
+		 //pickup another weapon
+		 life.pickUpWeapon(wp2);
+		 assertEquals(wp2,life.getWeapon());
+		 
+		 
+		 
+	 }
+	
+	
+	
+	
 	/*
 	 *This Section for updating LifeForm so that the LifeForms can
 	 *attack each other. It is still for the Strategy Pattern. (Lab 3)
