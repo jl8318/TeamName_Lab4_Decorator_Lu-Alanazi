@@ -87,11 +87,11 @@ public class TestPowerBooster {
 	{
 		Weapon wp = new ChainGun();
 		wp = new PowerBooster(wp);
-		wp = new PowerBooster(wp);
+		wp = new PowerBooster(wp); 
 		
 		
 		assertEquals(200 , wp.getDamage(20));
-		assertEquals(75 , wp.getDamage(10));
+		assertEquals(75 , wp.getDamage(10)); 
 		
 		
 	}

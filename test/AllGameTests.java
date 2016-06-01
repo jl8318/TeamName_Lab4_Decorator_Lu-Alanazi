@@ -14,6 +14,8 @@ import weapon.TestChainGun;
 import weapon.TestGenericWeapon;
 import weapon.TestPistol;
 import weapon.TestPlasmaCannon;
+import weapon.TestPowerBooster;
+import weapon.TestScope;
 import weapon.TestStabilizer;
 import environment.TestCell;
 import environment.TestEnvironment;
@@ -41,7 +43,9 @@ import gameplay.TestSimpleTimer;
 	TestPlasmaCannon.class,
 	TestPistol.class,
 	TestChainGun.class,
-	TestStabilizer.class,	
+	TestStabilizer.class,
+	TestPowerBooster.class,
+	TestScope.class
 	})
 public class AllGameTests
 {

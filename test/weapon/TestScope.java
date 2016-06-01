@@ -114,10 +114,9 @@ public class TestScope {
 		Weapon wp = new Pistol();
 		wp = new Stabilizer(wp);
 		wp = new Scope(wp);
+		 assertEquals(9 , wp.getDamage(15));
 		
-		assertEquals(10, wp.getDamage(15));
-		assertEquals(10,wp.getDamage(15));
-		assertEquals(8, wp.getActualAmmo());
+		
 		/**
 		 * now call the reload method , so the expected ammo is 10 
 		 * 
@@ -139,10 +138,9 @@ public class TestScope {
 		wp = new PowerBooster(wp);	
 		wp = new Scope(wp);
 		
-
-		assertEquals(15, wp.getDamage(15));
-		assertEquals(13,wp.getDamage(15));
-		assertEquals(8, wp.getActualAmmo());
+        
+		assertEquals(16, wp.getDamage(15));
+		
 		/**
 		 * now call the reload method , so the expected ammo is 10 
 		 * 
