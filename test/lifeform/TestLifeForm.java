@@ -66,21 +66,71 @@ public class TestLifeForm
 		 Weapon wp2 = new Pistol();
 		 
 		 entity.pickUpWeapon(wp);
+		 //5<distance<10
 		 Range.distance = 9;
 		 entity.attack(entity2, 1);
 		 assertEquals(550,entity2.getCurrentLifePoints());
-		 //actual rate fire = 0
+		 //actual rate fire = 0,using attack strength
 		 assertEquals(0,entity.getWeapon().getActualRateFire());
 		 entity.attack(entity2, 2);
 		 assertEquals(545,entity2.getCurrentLifePoints());
-		 
+		 entity.getWeapon().setActualRateFire(3);
+		 entity.attack(entity2, 3);
+		 assertEquals(471,entity2.getCurrentLifePoints());
+		 assertEquals(0,entity.getWeapon().getActualAmmo());
+		 //no ammo, 5<distance<10, using attack strength
+		 entity.attack(entity2);
+		 assertEquals(466,entity2.getCurrentLifePoints());
+		 //no ammo, no rate fire
+		 entity.getWeapon().setActualRateFire(0);
+		 entity.attack(entity2);
+		 assertEquals(461,entity2.getCurrentLifePoints());
+		 //distance>10
+		 entity.getWeapon().setActualAmmo(1);
+		 entity.getWeapon().setActualRateFire(1);
+		 Range.distance =15;
+		 entity.attack(entity2,1);
+		 assertEquals(449,entity2.getCurrentLifePoints());
+		 //no ammo, distance>10
+		 entity.attack(entity2,2);
+		 assertEquals(449,entity2.getCurrentLifePoints());
+		 //no weapon, distance>10
+		 entity.dropWeapon();
+		 entity.attack(entity2,2);
+		 assertEquals(449,entity2.getCurrentLifePoints());
+		 //no weapon, distance < 10.
+		 entity.attack(entity2,2);
+		 assertEquals(449,entity2.getCurrentLifePoints());
 		 
 		 Range.distance=4;
-		
+		 //distance<=5
+		//no weapon
 		 entity.attack(entity2);
-		 assertEquals(595,entity2.getCurrentLifePoints());
+		 assertEquals(444,entity2.getCurrentLifePoints());
 		 
+		 //with another weapon
+		 entity.pickUpWeapon(wp2);
+		 entity.attack(entity2);
+		 assertEquals(439,entity2.getCurrentLifePoints());
 		
+		 //distance> maxRange
+		 Range.distance=30;
+		 entity.attack(entity2);
+		 assertEquals(439,entity2.getCurrentLifePoints());
+		 //test different distance is works.
+		 Range.distance=15;
+		 entity.attack(entity2);
+		 assertEquals(433,entity2.getCurrentLifePoints());
+		 Range.distance=10;
+		 entity.getWeapon().setActualRateFire(2);
+		 entity.attack(entity2,1);
+		 assertEquals(425,entity2.getCurrentLifePoints());
+		 assertEquals(7,entity.getWeapon().getActualAmmo());
+		 
+		 //test reload method.
+		 entity.reloadWeapon();
+		 assertEquals(10,entity.getWeapon().getActualAmmo());
+				 
 	 }
 	
 	
