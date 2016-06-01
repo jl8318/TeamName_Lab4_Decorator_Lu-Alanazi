@@ -8,7 +8,7 @@ public class MockWeapon extends GenericWeapon {
 
 	@Override
 	public int getDamage(int distance) {
-		return distance;
+		return distance; 
 	}
 
 }

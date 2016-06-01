@@ -26,7 +26,7 @@ public class TestPlasmaCannon {
 		assertEquals(50,pc.getBaseDamage());
 		assertEquals(1,pc.getRateOfFire());
 		assertEquals(1,pc.getActualRateFire());
-		assertEquals(20,pc.getMaxRange());
+		assertEquals(20,pc.getMaxRange()); 
 		
 	}
 	

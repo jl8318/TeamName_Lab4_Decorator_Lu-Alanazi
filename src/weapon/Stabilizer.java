@@ -21,7 +21,7 @@ public class Stabilizer extends Attachment {
 		float stabilizer = (float) (this.getWeapon().getDamage(distanceads)* 1.25);
 		if(getActualAmmo()==0)
 		{
-			this.getWeapon().reloadWeapon();
+			this.getWeapon().reloadWeapon(); 
 		}
 		
 		return (int)stabilizer;

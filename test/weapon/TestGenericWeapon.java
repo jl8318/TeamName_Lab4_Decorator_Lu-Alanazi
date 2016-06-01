@@ -26,7 +26,7 @@ public class TestGenericWeapon {
 	@Test
 	public void testAllSetter()
 	{
-		Weapon wp = new MockWeapon(10,25,2,10); 
+		Weapon wp = new MockWeapon(10,25,2,10);   
 		assertTrue(wp instanceof Weapon);
 		wp.setMaxAmmo(5);
 		assertEquals(5,wp.getMaxAmmo());

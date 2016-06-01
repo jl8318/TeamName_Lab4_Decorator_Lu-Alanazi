@@ -30,15 +30,19 @@ public class TestChainGun {
 		 * the distance is more than the max range so it should return zero
 		 */
 		ChainGun cg = new ChainGun();
-		assertEquals(0 , cg.getDamage(30));
-		assertEquals(4, cg.getActualAmmo());
+		assertEquals(0 , cg.getDamage(30)); 
+		/**
+		 * even when the distance is more than the max range still can fire and ammo will be 
+		 * reduced by one
+		 */
+		assertEquals(3, cg.getActualAmmo());  
 		
 		/**
 		 * this to test if I passed negative value of distance 
 		 */
 		
 		assertEquals(50 , cg.getDamage(-20));
-		assertEquals(3, cg.getActualAmmo());
+		assertEquals(2, cg.getActualAmmo());
 	}
 	
 	/**

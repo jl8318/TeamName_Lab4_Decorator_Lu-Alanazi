@@ -18,6 +18,7 @@ public class TestPistol
 	{
 		/**
 		 * Test the Initialization (the constructor of Pistol)
+		 * @author Saad
 		 */
 		
 		Pistol p = new Pistol(10 , 25 , 2 , 10);
@@ -26,6 +27,7 @@ public class TestPistol
 	/**
 	 * test Pistol functioning correctly without attachment 
 	 * here the distance is 25 , so 10*(25-25)+5 / 25 = 2 
+	 * @author Saad
 	 */
 	@Test
 	public void testfunction() 
@@ -35,7 +37,7 @@ public class TestPistol
 		 */
 		
 		Pistol p = new Pistol();
-		assertEquals(2, p.getDamage(25));
+		assertEquals(2, p.getDamage(25)); 
 		/**
 		 * the actual Ammo reduced by one 
 		 */
@@ -47,13 +49,19 @@ public class TestPistol
 	/**
 	 * Test pistol if the distance is more than the max range
 	 * in this case it  should return zero 
+	 * @author Saad
 	 */
 	@Test
 	public void testmaxrange() 
 	{
 		Pistol p = new Pistol();
 		assertEquals(0, p.getDamage(30)); 
-		assertEquals(10, p.getActualAmmo()); 
+		/**
+		 * even when the distance is more than the max range still can fire and ammo will be 
+		 * reduced by one
+		 * @author Saad
+		 */
+		assertEquals(9, p.getActualAmmo()); 
 		
 		
 		 
@@ -65,6 +73,7 @@ public class TestPistol
 
 		/**
 		 * When the distance value is negative number 
+		 * @author Saad
 		 */
 		assertEquals(2 , p.getDamage(-25));
 		assertEquals(9, p.getActualAmmo());
@@ -73,6 +82,7 @@ public class TestPistol
 	
 	/**
 	 * Test the reload function 
+	 * @author Saad
 	 */
 	
 	@Test

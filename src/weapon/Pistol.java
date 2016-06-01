@@ -29,8 +29,10 @@ public class Pistol extends GenericWeapon {
 		float baseDamage = (float)getBaseDamage();
 		float maxrange = (float)getMaxRange();
 		
-		if (distance > getMaxRange())
+		if (distance > getMaxRange()) 
 		{
+			int actualAmmoInt = ((getActualAmmo()-1)>0)?(getActualAmmo()-1):0;
+			this.setActualAmmo(actualAmmoInt);
 			return 0 ; 
 		}
 		else 
