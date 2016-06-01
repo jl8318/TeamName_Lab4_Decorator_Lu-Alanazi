@@ -112,8 +112,8 @@ public class TestScope {
 	public void testPistolScopeStab() throws AttachmentException
 	{
 		Weapon wp = new Pistol();
-		wp = new Scope(wp);
 		wp = new Stabilizer(wp);
+		wp = new Scope(wp);
 		
 		assertEquals(10, wp.getDamage(15));
 		assertEquals(10,wp.getDamage(15));
@@ -137,7 +137,7 @@ public class TestScope {
 	{
 		Weapon wp = new Pistol();
 		wp = new PowerBooster(wp);	
-		wp = new Stabilizer(wp);
+		wp = new Scope(wp);
 		
 
 		assertEquals(15, wp.getDamage(15));

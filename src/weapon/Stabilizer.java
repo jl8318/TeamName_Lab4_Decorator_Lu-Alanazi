@@ -17,9 +17,9 @@ public class Stabilizer extends Attachment
 	}
     /**
      * A Stabilizer auto reloads if ammo is at 0 
-	 * A Stabilizer also increases the Weapon's damage by 25%
+	 * A Stabilizer also increases the Weapon's damage by 25% 
      */
-	@Override 
+	@Override  
 	public int getDamage(int distance)  
 	{
 		int distanceads = Math.abs(distance);

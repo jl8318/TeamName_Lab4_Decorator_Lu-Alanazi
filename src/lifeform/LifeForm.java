@@ -191,7 +191,7 @@ public abstract class LifeForm implements TimeObserver
 	 */
 	public void setTime(int time)
 	{
-		this.mytime = time;
+		this.mytime = time;  
 	}
 	
 	/**
@@ -203,7 +203,7 @@ public abstract class LifeForm implements TimeObserver
 	
 	public void setWeapon(Weapon weapon)
 	{
-		this.weapon = weapon ; 
+		this.weapon = weapon ;  
 	}
 	
 	/**

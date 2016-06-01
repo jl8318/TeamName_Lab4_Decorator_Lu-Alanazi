@@ -25,7 +25,7 @@ public class PowerBooster extends Attachment
 		float maxAmmo = (float)this.getMaxAmmo();
 		if (distanceads <= getMaxRange())
 		{
-			float damage = weapon*(1+actualAmmo/maxAmmo);  
+			float damage = weapon*(1+actualAmmo/maxAmmo);    
 			return (int)damage;
 		}
 		else
